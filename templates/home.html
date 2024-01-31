@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <style>
+        body{
+            background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20200801/pngtree-purple-abstract-background-fluid-gradient-with-wave-forms-image_375467.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Gill Sans', ;
+        overflow-y: hidden;}
+        .main{
+            display: flex;
+            flex-direction: column;
+            width: 813px;
+            margin: 20px 350px;
+        
+        }
+        
+        .title{
+            color: antiquewhite;
+            text-align: center;
+        }
+        .firstname{
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: row;
+            background: white;
+            height: 510px;
+        }
+     
+        .lastname{
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+         .email{
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .phone{
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .log {
+            float: right;
+            
+        }
+         a{
+            text-decoration: none;
+            background-color: black;
+            padding: 5px;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <a href="/login/" class="log">LOGIN</a>
+   <div class="main">
+    <div class="head" >
+        <h1 class="title">STUDENT REGISTRATION FORM</h1>
+    </div>
+    <div class="container">
+        <div class="form" style="padding: 20px;">
+            <form action="" method="POST">
+                {%csrf_token%}
+                <div class="firstname">
+                    <label for="fn">FIRST NAME :</label>
+                    <input type="text" placeholder="First Name" name="firstname"style="padding: 5px; border:1px solid black">
+                </div>
+                <div class="lastname">
+                    <label for="ln">LAST NAME :</label>
+                    <input type="text" placeholder="Last Name" name="lastname"style="padding: 5px; border:1px solid black">
+                </div>
+                <div class="email">
+                    <label for="mail">EMAIL :</label>
+                    <input type="email" placeholder="Email" name="email"style="padding: 5px; border:1px solid black">
+                </div>
+                <div class="phone">
+                    <label for="ph">PHONE :</label>
+                    <input type="number" placeholder="Phone" name="phone"style="padding: 5px; border:1px solid black">
+                </div>
+                <div class="password" style="display: flex; flex-direction: column; padding: 5px;gap: 10px;">
+                    <label for="pswd">PASSWORD :</label>
+                    <div class="pass" style="display: flex; flex-direction: row; gap: 15px;">
+                        <div style="display: flex; flex-direction: column;">
+                            <input type="password" name="password" placeholder="Password" style="padding: 5px; border:1px solid black">
+                            <span style="color: rgb(194, 24, 24);">Minimum of 6 Characters</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <input type="password" name="password" placeholder="Confirm Password" style="padding: 5px; border:1px solid black">
+                            <span> </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gender" style="display: flex;padding: 5px; padding-top: 10px;">
+                    <label for="gender">GENDER :</label>
+                    <div class="m">
+                        <input type="radio" name="gender" value="Male">
+                        <span>Male</span>
+                    </div>
+                    <div class="f">
+                        <input type="radio" name="gender" value="Female">
+                        <span>Female</span>
+                    </div>
+                </div>
+                
+                    <Button type="submit" style="padding:8px 150px; margin-top: 40px;margin-left: 10px;background: brown;border: none;">SUBMIT</Button>
+                
+            </form>
+        </div>
+        <div class="stuimg">
+            <img src="{% static 'images/students.png' %}" alt="" width="400" height="510">
+        </div>
+    </div>
+</div>
+</body>
+</html>
